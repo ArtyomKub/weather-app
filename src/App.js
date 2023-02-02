@@ -1,12 +1,13 @@
 import './App.css';
-import {useState} from 'react';
-import {fetchWeather} from './api';
+import { useState } from 'react';
+import { fetchWeather } from './api';
 import {WeatherCard} from './Components/WeatherCard';
 
 function App() {
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null)
     const [error, setError] = useState('')
+
     const handleChange = (event) => {
         setCity(event.target.value);
     };
@@ -37,7 +38,7 @@ function App() {
             {error ? (
                 <p className='error'>{error}</p>
             ) : (
-                <WeatherCard weather={weather}/>
+                <WeatherCard weather={weather} />
             )}
         </div>
     );
